@@ -1,0 +1,217 @@
+:root{
+	--yellow: #ffe433;
+	--dirty-yellow: #dcc427;
+	--dark-blue: #002638;
+	--light-blue: #04afce;
+	--purple:  #951ab7;
+	--dirty-lime: #aac129;
+}
+
+html, 
+body {
+    height: 100vh;
+    width:  100vw;
+    padding: 0;
+    margin:  0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body{
+	background-color: #002638;
+	background-image: url('img/bbt-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-attachment: fixed;
+}
+
+main{
+	width: 100%;
+	overflow: hidden;
+}
+
+#logo{
+	position: relative;
+	display: block;
+	max-width: 95vw;
+	max-height: 55vh;
+	z-index: 2;
+}
+
+content{
+	width: 50%;
+	display:  block;
+}
+
+#tagline{
+	width: 100%;
+	z-index: 3;
+	display: block;
+	margin-top: 2vh;
+}
+
+text.tag-text{
+	font-style: italic;
+	font-weight: bold;
+	font-size: 40px;
+	fill: #b7cf2e;
+	fill:  url(#green-texture);
+	stroke: #00213c;
+	stroke-width: 13px;
+	stroke-linejoin: round;
+	paint-order: stroke fill;
+}
+
+#buttons{
+	margin-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+a.button{
+	position: relative;
+	display: inline-table;
+	width: 46%;
+	color: white;
+	background-color: var(--light-blue);
+	background-image: url(img/dirty.png);
+	background-size: cover;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	border-radius:  6px;
+	border: 2px #e4e4e4 solid;
+	transition: border .2s, box-shadow .2s;
+	min-height: 3em;
+}
+
+a.button:hover{
+	border: 2px var(--purple) solid;
+	box-shadow: inset 0px 0px 0px 2px var(--purple);
+}
+
+a.button:last-child{
+	margin-left:  2%;
+}
+
+a.button span{
+	background-color: white;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0 .5em;
+}
+
+.dirty-text{
+	background-image: url(img/dirty.png);
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: screen;
+}
+
+.dirty::after {
+	content:  '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/bbt-noise.jpg');
+    opacity: 70%;
+    mix-blend-mode: multiply;
+}
+
+#computer-kid{
+	z-index: -1;
+	position: fixed;
+	bottom: 0px;
+	right: 0;
+	background-image: url('img/bbt-kid.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 800px;
+	height:  614px;
+	max-height:  70vh;
+	max-width: 95vw;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	main{
+		width: 95vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#logo{
+		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	content{
+		width:  100%;
+	}
+
+	#tagline{
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 2em;
+		max-width: 95vw;
+	}
+
+	a.button{
+		min-height: 2em;
+	}
+}
+
+@media screen and (max-width: 375px){
+	#buttons{
+		width: 95%;
+    	margin-top: 5vh;
+    	margin-left: auto;
+    	margin-right: auto;
+	}
+
+	a.button{
+		width: 100%;
+	}
+
+	a.button:last-child{
+	margin-top:  .5em;
+	margin-left: 0;
+	}
+
+}
+
+@media screen and (max-height: 700px) and (orientation:landscape){
+	#logo{
+		max-height: 35vh;
+	}
+
+	#tagline{
+		max-height: 20vh;
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px){
+	#buttons{
+		position: fixed;
+		margin: 0;
+		width: 100vw;
+		bottom: 2vh;
+	}
+
+	a.button{
+		width: 45%;
+
+	}
+
+}
+
+
